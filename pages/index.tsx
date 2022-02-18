@@ -1,6 +1,7 @@
 import axios from "axios";
 import { GetServerSideProps, GetStaticProps } from "next";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 
 interface PagePros {
   id: number;
@@ -15,6 +16,8 @@ interface RepoProps {
 }
 
 export default function Home({ page, date }: RepoProps) {
+
+
   return (
     <div>
       <Head>
@@ -25,7 +28,7 @@ export default function Home({ page, date }: RepoProps) {
 
       <div>
         <h1>{date}</h1>
-        {console.log(date)}
+  
         <ul>
           {page.map((repo) => (
             <li key={repo.id}>
